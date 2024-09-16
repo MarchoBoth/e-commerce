@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>eBooks</title>
+  </head>
+  <body class="bg-[#1d267d] text-white">
+    <!--Navbar Start-->
+    <nav class="bg-[#0C134F] p-1">
+      <div class="container mx-auto flex justify-between items-center">
+        <div
+          class="text-white h-[80px] text-2xl font-bold flex items-center overflow-hidden"
+        >
+          <img
+            src="asset/Assets Tailwind Final Project/cek_toko_sebelah-.png"
+            alt=""
+            class="h-auto w-[160px] mr-2"
+          />
+          e-comerch eBooks
+        </div>
+        <div class="hidden md:flex space-x-4 items-center text-white">
+          <button class="hover:text-gray-400">
+            <i class="fa-solid fa-gear text-3xl"></i>
+          </button>
+
+          <button class="hover:text-gray-400">
+            <i class="fa-solid fa-magnifying-glass text-3xl"></i>
+          </button>
+
+          <button class="hover:text-gray-400">
+            <i class="fa-solid fa-cart-shopping text-3xl"></i>
+          </button>
+          <div class="relative">
+            <button id="user-menu-btn" class="hover:text-gray-400">
+              <i class="fa-solid fa-circle-user text-3xl"></i>
+            </button>
+            <div
+              id="user-menu"
+              class="hidden absolute right-0 mt-2 w-60 bg-white shadow-md rounded-lg py-2 text-gray-700"
+            >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >anjasariesta96@gmail.com</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >all e-books</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Dashboard</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sign Out</a>
+            </div>
+          </div>
+        </div>
+        <button
+          id="hamburger-btn"
+          class="md:hidden text-white focus:outline-none"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-blue-900 p-4">
+        <ul class="space-y-4 text-white">
+          <li><a href="#" class="block hover:text-gray-400"></a></li>
+          <li><a href="#" class="block hover:text-gray-400"></a></li>
+          <li><a href="#" class="block hover:text-gray-400"></a></li>
+          <li>
+            <button
+              id="mobile-user-menu-btn"
+              class="w-full text-left hover:text-gray-400 flex items-center justify-between"
+            >
+              <span> User Profil<i class="fas fa-user-circle"></i></span>
+              <i class="fas fa-chvron-down"></i>
+            </button>
+            <ul
+              id="mobile-user-menu"
+              class="hidden bg-blue-800 rounded-lg mt-2"
+            >
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-700"
+                  >lorem@gmail.com</a
+                >
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-700"
+                  >All eBooks</a
+                >
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-700"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-700"
+                  >Sign Out</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <script>
+      // toggle user dropdown menu for desktop
+      const userMenuBtn = document.getElementById('user-menu-btn');
+      const userMenu = document.getElementById('user-menu');
+
+      userMenuBtn.addEventListener('click', () => {
+        userMenu.classList.toggle('hidden');
+      });
+      // Toggle Mobile Menu
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      // toogle mobile user dropdown
+      const mobileUserMenuBtn = document.getElementById('mobile-user-menu-btn');
+      const mobileUserMenu = document.getElementById('mobile-user-menu');
+
+      mobileUserMenuBtn.addEventListener('click', () => {
+        mobileUserMenu.classList.toggle('hidden');
+      });
+    </script>
+    <!--Navbar End-->
+    <div class="container mx-auto flex flex-col lg:flex-row mt-6">
+      <!--Aside Start-->
+      <aside
+        class="w-full lg:w-1/4 bg-[#2F58CD] rounded-lg shadow-md p-4 h-fit"
+      >
+        <h2 class="text-white font-bold text-xl mb-4 border-b-2">Filter</h2>
+        <ul class="font-bold m-2">
+          Sort By
+          <li class="font-normal">
+            <input type="radio" class="rounded-full m-2" />Price - Low to High
+          </li>
+          <li class="font-normal">
+            <input type="radio" class="rounded-full m-2" />Price - Low to High
+          </li>
+        </ul>
+        <ul class="font-bold m-2">
+          Rating
+          <li class="font-normal">
+            <input type="radio" class="rounded-full m-2" />Price - Low to High
+          </li>
+          <li class="font-normal">
+            <input type="radio" class="rounded-full m-2" />Price - Low to High
+          </li>
+          <li class="font-normal">
+            <input type="radio" class="rounded-full m-2" />Price - Low to High
+          </li>
+          <li class="font-normal">
+            <input type="radio" class="rounded-full m-2" />Price - Low to High
+          </li>
+        </ul>
+        <ul class="font-bold m-2">
+          Other Filters
+          <li class="font-normal">
+            <input type="radio" class="rounded-full m-2" />Price - Low to High
+          </li>
+          <li class="font-normal">
+            <input type="radio" class="rounded-full m-2" />Price - Low to High
+          </li>
+        </ul>
+      </aside>
+      <!--Aside End-->
+      <!--Main Start-->
+      <main class="w-full lg:w-3/4 mt-4 lg:mt-0 lg:ml-4">
+        <!--Grid card start-->
+        <h1 class="flex justify-between mx-7 text-xl font-bold mt-2 mb-6">
+          All eBooks(15) <i class="fa-solid fa-ellipsis-vertical"></i>
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!--card 1 start colom1-->
+
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 1 End-->
+
+          <!--card 2 start-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 2 End-->
+
+          <!--card 3 start-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 3 End-->
+          <!--card 1 start colom2-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 1 End-->
+
+          <!--card 2 start-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 2 End-->
+
+          <!--card 3 start-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 3 End-->
+          <!--card 1 start colom3-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 1 End-->
+
+          <!--card 2 start-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 2 End-->
+
+          <!--card 3 start-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 3 End-->
+          <!--card 1 start colom4-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 1 End-->
+
+          <!--card 2 start-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 2 End-->
+
+          <!--card 3 start-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 3 End-->
+          <!--card 1 start colom5-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 1 End-->
+
+          <!--card 2 start-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 2 End-->
+
+          <!--card 3 start-->
+          <div
+            class="flex-col justify-center mx-auto mb-4 flex-wrap border border-white rounded-lg overflow-hidden"
+          >
+            <img
+              src="asset/Assets Tailwind Final Project/front-view-stacked-books-ladders-education-day.jpg"
+              alt=""
+              class="w-[280px] h-[166px] md:w-80 object-fit"
+            />
+            <p class="font-bold text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p class="text-left w-[200px] mx-auto mt-4 mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              eveniet.
+            </p>
+            <div class="flex items-center mb-4">
+              <!-- Star Rating -->
+              <span class="text-yellow-500 text-xl w-[200px] mx-auto"
+                >★★★★★</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center w-[200px] mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">$99</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!--card 3 End-->
+        </div>
+        <!--Grid card End-->
+      </main>
+      <!--Main End-->
+    </div>
+    <!--Footer Start-->
+    <footer
+      class="bg-[#0C134F] flex flex-col items-center lg:flex-row justify-evenly w-full h-full py-3"
+    >
+      <div>© 2023 Cek Toko Sebelah. All Right Reserved.</div>
+      <div class="">
+        <i class="fa-brands fa-instagram text-xl"></i>
+        <i class="fa-brands fa-twitter text-xl"></i>
+        <i class="fa-brands fa-github text-xl"></i>
+      </div>
+    </footer>
+    <!--Footer End-->
+  </body>
+</html>

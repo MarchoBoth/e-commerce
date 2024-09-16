@@ -6,12 +6,3 @@ module.exports = {
   },
   plugins: [],
 };
-module.exports = {
-  theme: {
-    extend: {
-      screens: {
-        'sm-md': '888px', // Tambahkan breakpoint kustom di sini
-      },
-    },
-  },
-};

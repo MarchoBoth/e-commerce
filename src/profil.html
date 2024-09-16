@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Profil</title>
+  </head>
+  <body class="bg-[#0C134F] text-white">
+    <nav class="bg-[#0C134F] p-1">
+      <div class="container mx-auto flex justify-between items-center">
+        <div
+          class="text-white h-[80px] text-2xl font-bold flex items-center overflow-hidden"
+        >
+          <img
+            src="asset/Assets Tailwind Final Project/cek_toko_sebelah-.png"
+            alt=""
+            class="h-auto w-[160px] mr-2"
+          />
+          e-comerch eBooks
+        </div>
+        <div class="hidden md:flex space-x-4 items-center text-white">
+          <button class="hover:text-gray-400">
+            <i class="fa-solid fa-gear text-3xl"></i>
+          </button>
+
+          <button class="hover:text-gray-400">
+            <i class="fa-solid fa-magnifying-glass text-3xl"></i>
+          </button>
+
+          <button class="hover:text-gray-400">
+            <i class="fa-solid fa-cart-shopping text-3xl"></i>
+          </button>
+          <div class="relative">
+            <button id="user-menu-btn" class="hover:text-gray-400">
+              <i class="fa-solid fa-circle-user text-3xl"></i>
+            </button>
+            <div
+              id="user-menu"
+              class="hidden absolute right-0 mt-2 w-60 bg-white shadow-md rounded-lg py-2 text-gray-700"
+            >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >anjasariesta96@gmail.com</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >all e-books</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Dashboard</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sign Out</a>
+            </div>
+          </div>
+        </div>
+        <button
+          id="hamburger-btn"
+          class="md:hidden text-white focus:outline-none"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-blue-900 p-4">
+        <ul class="space-y-4 text-white">
+          <li><a href="#" class="block hover:text-gray-400"></a></li>
+          <li><a href="#" class="block hover:text-gray-400"></a></li>
+          <li><a href="#" class="block hover:text-gray-400"></a></li>
+          <li>
+            <button
+              id="mobile-user-menu-btn"
+              class="w-full text-left hover:text-gray-400 flex items-center justify-between"
+            >
+              <span> User Profil<i class="fas fa-user-circle"></i></span>
+              <i class="fas fa-chvron-down"></i>
+            </button>
+            <ul
+              id="mobile-user-menu"
+              class="hidden bg-blue-800 rounded-lg mt-2"
+            >
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-700"
+                  >lorem@gmail.com</a
+                >
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-700"
+                  >All eBooks</a
+                >
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-700"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-700"
+                  >Sign Out</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <script>
+      // toggle user dropdown menu for desktop
+      const userMenuBtn = document.getElementById('user-menu-btn');
+      const userMenu = document.getElementById('user-menu');
+
+      userMenuBtn.addEventListener('click', () => {
+        userMenu.classList.toggle('hidden');
+      });
+      // Toggle Mobile Menu
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      // toogle mobile user dropdown
+      const mobileUserMenuBtn = document.getElementById('mobile-user-menu-btn');
+      const mobileUserMenu = document.getElementById('mobile-user-menu');
+
+      mobileUserMenuBtn.addEventListener('click', () => {
+        mobileUserMenu.classList.toggle('hidden');
+      });
+    </script>
+    <!--Navbar End-->
+    <!--Profil Start-->
+    <div class="w-full lg:w-[80%] mx-auto my-8">
+      <h1 class="flex underline text-2xl h-20 p-5">My Profile</h1>
+    </div>
+    <!--Profil Start-->
+    <div
+      class="border-gray-400 border rounded-lg flex flex-row justify-between w-full lg:w-[80%] mx-auto"
+    >
+      <div class="flex flex-row m-2">
+        <img
+          src="asset/Assets Tailwind Final Project/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded.jpg"
+          alt=""
+          class="w-[90px] h-[90px] rounded-full"
+        />
+        <div class="flex-col h-auto ml-2">
+          <p class="text-xl font-bold">Lorem ipsum</p>
+          <p class="h-auto">Manager</p>
+          <p class="h-auto">Denpasar</p>
+        </div>
+      </div>
+      <div class="text-xl font-bold py-8 mr-3">
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+        >
+          Edit <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </div>
+    </div>
+    <!--Profil end-->
+    <!--Personal Informasion Start-->
+    <div
+      class="border-gray-400 border rounded-lg flex flex-col w-full lg:w-[80%] mx-auto my-20"
+    >
+      <div class="flex flex-row m-2 justify-between">
+        <div class="h-auto ml-2">
+          <p class="text-xl font-bold py-8">Personal Information</p>
+        </div>
+        <div class="text-xl font-bold py-8 mr-3">
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+          >
+            Edit <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-row ml-10">
+        <div class="flex flex-col m-2 w-[200px] h-[100px]">
+          <p>First Name</p>
+          <p>lorem</p>
+        </div>
+        <div class="flex flex-col m-2 w-[200px] h-[100px]">
+          <p>Last Name</p>
+          <p>Ipsum</p>
+        </div>
+      </div>
+      <div class="flex flex-row ml-10">
+        <div class="flex flex-col m-2 w-[200px] h-[100px]">
+          <p>Email address</p>
+          <p>loremipsum@gmail.com</p>
+        </div>
+        <div class="flex flex-col m-2 w-[200px] h-[100px]">
+          <p>Phone</p>
+          <p>+62123456789</p>
+        </div>
+      </div>
+      <div class="flex flex-row ml-10">
+        <div class="flex flex-col m-2 w-[200px] h-[100px]">
+          <p>Bio</p>
+          <p>Manager</p>
+        </div>
+      </div>
+    </div>
+    <!--Personal Informasion end-->
+
+    <div
+      class="border-gray-400 border rounded-lg flex flex-col w-full lg:w-[80%] mx-auto my-20"
+    >
+      <div class="flex flex-row m-2 justify-between">
+        <div class="h-auto ml-2">
+          <p class="text-xl font-bold py-8">Address</p>
+        </div>
+        <div class="text-xl font-bold py-8 mr-3">
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+          >
+            Edit <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-row ml-10">
+        <div class="flex flex-col m-2 w-[200px] h-[100px]">
+          <p>Country</p>
+          <p>lorem</p>
+        </div>
+        <div class="flex flex-col m-2 w-[200px] h-[100px]">
+          <p>City/State</p>
+          <p>Ipsum</p>
+        </div>
+      </div>
+      <div class="flex flex-row ml-10">
+        <div class="flex flex-col m-2 w-[200px] h-[100px]">
+          <p>Postal code</p>
+          <p>loremipsum@gmail.com</p>
+        </div>
+        <div class="flex flex-col m-2 w-[200px] h-[100px]">
+          <p>Address</p>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+      </div>
+    </div>
+    <!--adreed end-->
+    <footer
+      class="bg-[#0C134F] flex flex-col items-center lg:flex-row justify-evenly w-full h-[70px] py-8"
+    >
+      <div>© 2023 Cek Toko Sebelah. All Right Reserved.</div>
+      <div class="">
+        <i class="fa-brands fa-instagram text-xl"></i>
+        <i class="fa-brands fa-twitter text-xl"></i>
+        <i class="fa-brands fa-github text-xl"></i>
+      </div>
+    </footer>
+  </body>
+</html>
